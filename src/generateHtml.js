@@ -4,7 +4,7 @@ const generateManager = function (manager) {
         <h3>${manager.name}</h3>
         <h4>Manager</h4>
         <p>ID: ${manager.id}</p>
-        <p>Email: <a href="mailto:${manager.email}>${manager.email}</a></p>
+        <p>Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
         <p>Officer number: ${manager.officeNumber}</p>
     </div>
     `
@@ -16,8 +16,8 @@ const generateEngineer = function (engineer) {
         <h3>${engineer.name}</h3>
         <h4>Engineer</h4>
         <p>ID: ${engineer.id}</p>
-        <p>Email: <a href="mailto:${engineer.email}>${engineer.email}</a></p>
-        <p>Github: <a href="https://github.com/${engineer.github}">${engineer.github}</p>
+        <p>Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
+        <p>Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
     </div>
     `
 }
@@ -28,7 +28,7 @@ const generateIntern = function (intern) {
         <h3>${intern.name}</h3>
         <h4>Intern</h4>
         <p>ID: ${intern.id}</p>
-        <p>Email: <a href="mailto:${intern.email}>${intern.email}</a></p>
+        <p>Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
         <p>School: ${intern.school}</p>
     </div>
     `
