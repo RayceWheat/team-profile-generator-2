@@ -4,6 +4,8 @@ const fs = require("fs");
 const Intern = require("./lib/Intern");
 const Engineer = require("./lib/Engineer");
 const Manager = require("./lib/Manager");
+
+const generateHtml = require('./src/generateHtml');
 const console = require('console');
 
 const employees = [];
@@ -40,8 +42,8 @@ const addManager = () => {
             type: "input",
             name: "email",
             message: "Manager's email:",
-            validate: emailInput => {
-                valid = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(email)
+            validate: email => {
+                valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
                 if (valid) {
                     return true;
                 } else {
@@ -110,8 +112,8 @@ const addEmployee = () => {
             type: 'input',
             name: 'email',
             message: "Employee's Email:",
-            validate: emailInput => {
-                valid = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(email)
+            validate: email => {
+                valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
                 if (valid) {
                     return true;
                 } else {
@@ -177,3 +179,25 @@ const addEmployee = () => {
     })
 };
 
+const writeFile = (data) => {
+    fs.writeFile("./dist/index.html", data, (err) => {
+        if (err) {
+            console.log(err);
+            return;
+        } else {
+            console.log('Your team has been generated.');
+        }
+    });
+};
+
+addManager()
+    .then(addEmployee)
+    .then((employees) => {
+        return generateHtml(employees);
+    })
+    .then((pageHtml) => {
+        return writeFile(pageHtml);
+    })
+    .catch((err) => {
+        console.log(err);
+    });
