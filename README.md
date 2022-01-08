@@ -7,7 +7,7 @@ This is a simple app which will generate a page detailing the information of a g
 After cloning the repo and installing dependices simply type "node index.js"
 
 ## Video
-![Video](https://github.com/RayceWheat/team-profile-generator-2/blob/develop/public/demo-video/demo%20video.mkv?raw=true)
+![Video](https://drive.google.com/file/d/1SLqCa1nYD8qrWJIfX6cgZD3SYECRxBNh/view>)
 
 ## Credits 
 This application was developed by [Rayce Wheat](https://github.com/RayceWheat)
